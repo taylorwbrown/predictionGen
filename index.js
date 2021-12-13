@@ -3,28 +3,31 @@ const randoArrays = {
 
     name: ['Steve', 'Rackus', 'Bean', 'Boinkus', 'Cheese', 'Carlton'],
   
-    feeling: ['is upset.', 'wants beans.', 'despises you.', 'wants bread.', 'loves you.', 'takes pity.'],
+    feeling: [' is upset.', ' wants beans.', ' despises you.', ' wants bread.', ' loves you.', ' takes pity.'],
   
-    statement: ['Will require attention.', 'Give beans.', 'Give cheese.', 'Take to dinner.', 'Bing Bong.', 'Run!', 'Love them forever.'],
+    statement: [' Will require attention.', ' Give beans.', ' Give cheese.', ' Take them to dinner.', ' Bing Bong.', ' Run!', ' Love them forever.'],
 
     // sets up randomized index numbers to be called on later.
     randomName() {
-      return this.name(Math.floor(Math.random() * this.name.length()));
+      let newName = this.name[Math.floor(Math.random() * this.name.length)];
+      return newName;
     },
 
     randomFeeling() {
-      return this.feeling(Math.floor(Math.random() * this.feeling.length()));
+      let newFeeling = this.feeling[Math.floor(Math.random() * this.feeling.length)];
+      return newFeeling;
     },
 
     randomStatement() {
-      return this.statement(Math.floor(Math.random() * this.statement.length()));
+      let newStatement = this.statement[Math.floor(Math.random() * this.statement.length)];
+      return newStatement;
     },
 
     // Puts the three randomizations together.
     makeSentence() {
-      console.log(`${this.randomName} ${this.randomFeeling} ${this.randomStatement}`);
+      console.log(this.randomName() + this.randomFeeling() + this.randomStatement());
     }
 
   };
 
-randoArrays.makeSentence;
+randoArrays.makeSentence();
